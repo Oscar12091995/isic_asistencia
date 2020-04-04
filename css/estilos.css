@@ -405,7 +405,42 @@ a.article:hover {
     -ms-filter:"alpha(opacity=100)";
 
 }
-.toggle
+.rojo{
+    color: red;
+    position: 0px 0px 20px 10px;
+}
+.verde{
+    color: green;
+    position: 0px 0px 20px 10px;
+ }
+ 
+.invalid{
+    background: url(invalid.png);
+    content: '';
+    position: left;
+    right: 20px;
+ 
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    z-index: 1000;
+  
+}
+
+.valid{
+background: url(valid.png);
+content: '';
+position: center;
+right: 20px;
+
+width: 24px;
+height: 24px;
+background-size: cover;
+z-index: 1000;
+
+}
+
+/* .toggle
 {   
     background-color: black;
     border: black 1px solid;
@@ -444,4 +479,5 @@ a.article:hover {
     transition: .5s;
     text-align: center;
      
-}
+} */
+

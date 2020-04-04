@@ -63,7 +63,6 @@ $fecha=date("Y-m-d");
                             <p><a class="sidebarCollapse verMenu"><i class="fas fa-bars fa-lg"></i></a> </p>
                         </div>
                     </div>
-                  
                     <div class="borde">
                         <div class="col text-right">
                         <p><a onclick="salir()" href="#" class="salirSistema"><i class="fas fas fa-power-off fa-lg"></i></a></p>
@@ -125,12 +124,31 @@ $fecha=date("Y-m-d");
                 </section>
                 
                 <section id="Listado-EC" class="animated  fadeIn contenedor" style="display:none;"></section>
-            </div>       
+            </div>
+
+            <!-- <div class="container" id="usuarios">
+                <section id="guardar-EC" style="display:none;">
+                    <?php
+                        include'../musuarios/formGuardar.php';
+                    ?>
+                </section>
+
+                <section id="editar-EC" style="display:none;">
+                    <?php
+                        include'../mEstadoCivil/formEditar.php';
+                    ?>
+                </section>
+                
+                <section id="Listado-EC" class="animated  fadeIn contenedor" style="display:none;"></section>
+            </div>           -->
 
         </div>
 
     </div>
 
+    <!-- Modal de cambiopass -->
+        <?php include'../modales/modalCambio.php'; ?>
+    <!-- Modal de cambiopass -->
     <!-- Modal de carga -->
         <?php include'../modales/modalCarga.php'; ?>
     <!-- Modal de carga -->  

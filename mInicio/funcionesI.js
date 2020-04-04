@@ -316,7 +316,6 @@ function cssTema(h_sidebar,color_base,letra_color,color_borde){
     $("#scroll span").css({
         'border-bottom-color': letra_color
     }); 
-
 }
 
 function salir(){
@@ -345,10 +344,15 @@ function salir(){
               var letra_color="#fff";
               var color_borde="#40739e";
               cssTema(h_sidebar,color_base,letra_color,color_borde);
+              $("#Cambio").prop("checked", false);
+              $("#Cambio").click();
+              $('#pass').attr('type', 'password');
+              $('#vpass').attr('type', 'password');
               $("#icoLogin").removeClass("fas fa-unlock");
               $("#icoLogin").addClass("fas fa-lock");
               $("#btnIngresar").attr("disabled","disabled");
               $("#loginUsuario").focus();
+              $("#Cambio").prop("checked", false);
   
               var idUsuario=$("#inicioIdusuario").val();
               actividad  ="Salio del sistema";
@@ -459,36 +463,4 @@ $(".menu").click(function(){
 $('#scroll').click(function(){ 
     $("html, body").animate({ scrollTop: 0 }, 600); 
     return false; 
-});
-
-$(document).ready(function () {
-
- 
-    $(".btn-togglerOn").click(function()
-    {
-        $(".btn-togglerOn").css({"margin-left":"45px", "transition":"1s"});
-        $(".btn-togglerOn").hide();  
-        $("body").css({"background-color" : "black" , "color":"white", "transition":"1s" });
-        $(".toggle").css({"background-color" : "white" , "color":"black" });
-        $(".btn-togglerOff").css({"background-color" : "black" , "color":"white" });
-        $(".myJT").css({"background-color" : "black" , "color":"white" , "transition":"1s" });
-
-    } )
-    
-     
-    $(".btn-togglerOff").click(function()
-    {
-        $(".btn-togglerOn").css({"margin-left" : "0px" , "transition":".5s" });
-        $(".btn-togglerOn").show();  
-        $(".toggle").css({"background-color" : "black" , "color":"white" });
-        $(".btn-togglerOn").css({"background-color" : "white" , "color":"black" });
-        $("body").css({"background-color" : "white" , "color":"black" , "transition":"1s" });
-        $(".myJT").css({
-            "background-color": color_base,
-            color: letra_color,
-            "border-bottom":'8px solid' + color_borde
-        });
-      
-    } )
-
 });

@@ -52,17 +52,8 @@ $cadenaMenu = "SELECT
     </li>
 </ul>
 
-
-
 <ul class="list-unstyled CTAs">
-
     <li>
         <a href="javascript:salir()" class="article"><i class="fas fa-power-off"></i> Cerrar Sistema</a>
-    </li>
-    <li>
-    <div class="toggle active activado">
-        <div class="btn-togglerOn"><i class="fas fa-moon"></i></div>
-        <div class="btn-togglerOff"><i class="fas fa-sun"></i></div>
-    </div>
     </li>
 </ul>
