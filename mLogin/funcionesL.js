@@ -127,7 +127,7 @@ $("#loginUsuario").keyup(function(){
         data:{valor},
         success:function(respuesta){
             var dataArray = JSON.parse(respuesta);
-            //console.log(respuesta);
+            console.log(respuesta);
             var registros=dataArray.cRegistros;
             if (registros !=0 ) {
                 //$("#frmLogin").hide();
@@ -174,9 +174,7 @@ function generar()
 function validarcontra(){
     var pass = $("#pass").val();
     var vpass = $("#vpass").val();
-    // var let = pswd.match(/[A-z]/);
-    // var mlet = pswd.match(/[A-Z]/);
-    // var num = pswd.match(/\d/);
+
     if (pass.length>=8 || vpass.length >= 8) {
         $("#Lon").removeClass("rojo");
         $("#Lon").addClass("verde");
@@ -202,6 +200,7 @@ function validarcontra(){
         $("#btnGuardarPass").attr("disabled","disabled");
         $("#Lon").removeClass("verde");
         $("#Lon").addClass("rojo");
+        
         $("#aceptado").removeClass("valid");
         $("#aceptado").addClass("invalid");
     }
@@ -217,7 +216,7 @@ function cambiarPass(){
         dateType:"html",
         data:{usuario,contra, ncontra},
         success:function(respuesta){
-            // console.log(respuesta);
+            console.log(respuesta);
                 alertify.success("<i class='fa fa-check fa-lg'></i> Contraseña actualizada correctamente", 2);
                 $("#pass").val("");
                 $("#vpass").val("");
@@ -231,7 +230,11 @@ function cambiarPass(){
                 $("#Sim").addClass("rojo");
                 $("#Lon").removeClass("verde");
                 $("#Lon").addClass("rojo");
-                $("#btnGuardarPass").attr("disabled","disabled");
+                if (pass && vpass) {
+                    $("#btnGuardarPass").attr("disabled","disabled");
+                } else {
+                    $("#btnGuardarPass").removeAttr("disabled","disabled");
+                }
         },
         error:function(xhr,status){
             alert("Error en metodo AJAX"); 
@@ -246,7 +249,7 @@ function cambiarPass(){
         data:{usuario,contra},
         success:function(respuesta){
             var dataArray = JSON.parse(respuesta);
-            //console.log(respuesta);
+            console.log(respuesta);
             $("#contentLogin").hide();
             $("#contentSistema").show();
             persona=dataArray.result.persona;

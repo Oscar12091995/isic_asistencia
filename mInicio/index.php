@@ -182,6 +182,7 @@ $fecha=date("Y-m-d");
     <script type="text/javascript" src="../plugins/dataTableButtons/buttons.colVis.min.js"></script>
     <script type="text/javascript" src="../plugins/dataTableButtons/jszip.min.js"></script>
     <script type="text/javascript" src="../plugins/dataTableButtons/pdfmake.min.js"></script>
+    <script type="text/javascript" src="../plugins/dataTableButtons/pdfmake.min.js"></script>
     <script type="text/javascript" src="../plugins/dataTableButtons/vfs_fonts.js"></script>
     <script type="text/javascript" src="../plugins/dataTableButtons/buttons.html5.min.js"></script>
     <script type="text/javascript" src="../plugins/dataTableButtons/buttons.print.min.js"></script>
