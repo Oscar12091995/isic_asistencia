@@ -63,6 +63,37 @@ function verEstadoCivil(){
     var idTema=$("#inicioIdTema").val()
     aplicarTema(idTema,'otro');      
 }
+function verCambioPassword(){
+    $("#modalCambioPassSistem").modal("show");      
+}
+function cambiarPassSis(){
+    var idUsuario = $("#inicioIdusuario").val();
+    var ncontra = $("#password").val();
+    $.ajax({
+        url:"../mInicio/cPassSis.php",
+        type:"POST",
+        dateType:"html",
+        data:{idUsuario, ncontra},
+        success:function(respuesta){
+            console.log(respuesta);
+                alertify.success("<i class='fa fa-check fa-lg'></i> Contraseña actualizada correctamente", 2);
+                $("#password").val("");
+                $("#vpassword").val("");
+                $("#modalCambioPassSistem").modal("hide");
+                $("#Sims").removeClass("verde");
+                $("#Sims").addClass("rojo");
+                $("#Lons").removeClass("verde");
+                $("#Lons").addClass("rojo");
+                $('#password').attr('type', 'password');
+                $('#vpassword').attr('type', 'password');
+        },
+        error:function(xhr,status){
+            alert("Error en metodo AJAX"); 
+        },
+    });
+}
+
+
 
 function verUsuarios(){
     ocultarSecciones();
@@ -464,3 +495,71 @@ $('#scroll').click(function(){
     $("html, body").animate({ scrollTop: 0 }, 600); 
     return false; 
 });
+
+function verContraseñas(){
+    if ($('#password').get(0).type == 'text' && $('#vpass').get(0).type == 'text') {
+        $('#password').attr('type', 'password');
+        $('#vpassword').attr('type', 'password');
+    } else {
+        $('#password').attr('type', 'text');
+        $('#vpassword').attr('type', 'text');
+    }
+}
+function LimpiarModalCambioPass(){
+    $("#password").val("");
+    $("#vpassword").val("");
+    $("#Sims").removeClass("verde");
+    $("#Sims").addClass("rojo");
+    $("#Lons").removeClass("verde");
+    $("#Lons").addClass("rojo");
+    $("#btnGuardarPass").attr("disabled","disabled");
+    $('#password').attr('type', 'password');
+    $('#vpassword').attr('type', 'password');
+}
+function generarcontra()
+{
+  var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
+  var contraseña = "";
+  for (i=0; i<8; i++) {
+        contraseña += caracteres.charAt(Math.floor(Math.random()*caracteres.length));
+        $("#password").val(contraseña);
+        $("#vpassword").val(contraseña);
+  }
+}
+
+function validarcontraseña(){
+    var pass = $("#password").val();
+    var vpass = $("#vpassword").val();
+
+    if (pass.length>=8 || vpass.length >= 8) {
+        $("#Lons").removeClass("rojo");
+        $("#Lons").addClass("verde");
+        $("#aceptados").addClass("valid");
+        $("#aceptados").removeClass("invalid");
+
+        if ((pass == vpass)) {
+            $("#btnGuardarPassword").removeAttr("disabled");
+            $("#Sims").removeClass("rojo");
+            $("#Sims").addClass("verde");
+            $("#rechazados").addClass("valid");
+            $("#rechazados").removeClass("invalid");
+        }
+        else{
+            $("#btnGuardarPassword").attr("disabled","disabled");
+            $("#Sims").removeClass("verde");
+            $("#Sims").addClass("rojo");
+            $("#rechazados").removeClass("valid");
+            $("#rechazados").addClass("invalid");
+        }
+    }
+    else{
+        $("#btnGuardarPassword").attr("disabled","disabled");
+        $("#Lons").removeClass("verde");
+        $("#Lons").addClass("rojo");
+        
+        $("#aceptados").removeClass("valid");
+        $("#aceptados").addClass("invalid");
+    }
+    
+}
+

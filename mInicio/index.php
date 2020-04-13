@@ -161,6 +161,8 @@ $fecha=date("Y-m-d");
     <!-- Modal de PDF -->
         <?php include'../modales/modalPDF.php'; ?>
     <!-- Modal de PDF -->
+     <!-- Modal de cambiopass dentro del sistema -->
+     <?php include'../modales/modalCambioSistem.php'; ?>
 
     <!-- jQuery -->
     <script src="../plugins/jQuery/jquery-3.3.1.js"></script>   
@@ -169,8 +171,8 @@ $fecha=date("Y-m-d");
     <!-- Alertifyjs -->  
     <script src="../plugins/alertifyjs/alertify.min.js"></script> 
     <!-- Funciones Propias -->
-    <script src="funcionesI.js"></script> <!-- Inicio -->
-    <script src="../mLogin/funcionesL.js"></script> <!-- Login -->
+    <script src="../mInicio/funcionesI.js"></script> <!-- Inicio -->
+    <script src="../mLogin/funcionesL.js"></script><!-- Login -->
     <script src="../mDatosPersonales/funcionesDP.js"></script> <!-- Datos Personales --> 
     <script src="../mEstadoCivil/funcionesEC.js"></script> <!-- Estado Civil -->
     <!-- DataTables -->
