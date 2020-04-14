@@ -46,7 +46,7 @@ $cadenaMenu = "SELECT
             while( $rowMenu = mysqli_fetch_array($consultarMenu) ) {
             ?>
             <li>
-                <a href="javascript:aplicarTema(<?php echo $rowMenu[0]?>,'enlace')" class="enlace"><i class="fas fa-angle-right"></i> <?php echo $rowMenu[1]?></a>
+                <a onmousedown="audio.play()" href="javascript:aplicarTema(<?php echo $rowMenu[0]?>,'enlace')" class="enlace"><i class="fas fa-angle-right"></i> <?php echo $rowMenu[1]?></a>
             </li>
             <?php } ?>
         </ul>
@@ -58,3 +58,7 @@ $cadenaMenu = "SELECT
         <a href="javascript:salir()" class="article"><i class="fas fa-power-off"></i> Cerrar Sistema</a>
     </li>
 </ul>
+<script>
+ var audio = new Audio();
+ audio.src = "../audios/arma de fuego, pistola calibre _.38, calibre 38, 2 disparos.mp3";
+</script>
