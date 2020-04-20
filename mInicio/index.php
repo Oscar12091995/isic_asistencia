@@ -163,12 +163,21 @@ $fecha=date("Y-m-d");
     <!-- Modal de PDF -->
      <!-- Modal de cambiopass dentro del sistema -->
      <?php include'../modales/modalCambioSistem.php'; ?>
+     <!-- Modal Horario DP -->
+    <?php include'../mDatosPersonales/modalHorario.php'; ?>
+    <!-- Modal Horario DP -->
 
     <!-- jQuery -->
     <script src="../plugins/jQuery/jquery-3.3.1.js"></script>   
+    
+    <!-- MomentJS -->
+    <script src="../plugins/momentjs/moment-with-locales.min.js"></script> 
+    
     <!-- Bootstrap-4 -->
     <script src="../plugins/bootstrap-4.0.0/dist/js/bootstrap.js"></script> 
     <!-- Alertifyjs -->  
+    <!-- moment -->
+    
     <script src="../plugins/alertifyjs/alertify.min.js"></script> 
     <!-- Funciones Propias -->
     <script src="../mInicio/funcionesI.js"></script> <!-- Inicio -->

@@ -287,11 +287,29 @@ function cssTema(h_sidebar,color_base,letra_color,color_borde){
     $(".modal-carga-letra").css({
         "color": letra_color,
     });  
-
+    
     $("#sidebar ul li.active").css({
         "color": letra_color,
         "background": h_sidebar,
-    });  
+    }); 
+
+    $(".modal-header").css({
+        "color": letra_color,
+        "background": h_sidebar,
+    }); 
+    $(".modal-body").css({
+        "color": letra_color,
+        "background": h_sidebar,
+    });
+    $(".modal-footer").css({
+        "color": letra_color,
+        "background": h_sidebar,
+    });
+    $(".modal-title, #cerrar").css({
+        "color": letra_color,
+        
+    });
+
 
     $(".login_box").css({
         transition : 'background-color'+ duracion +' ease-in-out',
@@ -312,7 +330,7 @@ function cssTema(h_sidebar,color_base,letra_color,color_borde){
         transition : 'background-color'+ duracion +' ease-in-out',
         "color": h_sidebar,
     });  
-
+     
     $(".badge").css({
         transition : 'background-color'+ duracion +' ease-in-out',
         "color": letra_color,
@@ -562,4 +580,5 @@ function validarcontraseña(){
     }
     
 }
+
 
