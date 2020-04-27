@@ -17,6 +17,27 @@ function ocultarSecciones(){
     $("#editar-EC").hide();
     $("#Listado-EC").hide();
     //USUARIOS
+    $("#crearTema").hide();
+    $("#guardar-CT").hide();
+    $("#editar-CT").hide();
+    $("#Listado-CT").hide();
+    //Temas
+}
+function mostrarTemas(){
+    ocultarSecciones();
+    $("#lblTitular").text("Crear Temas");
+
+    $("#editar-CT").hide();
+    $("#guardar-CT").hide();
+    $("#Listado-CT").fadeIn();
+    // $("#frmGuardar-EC")[0].reset();
+    // $("#frmActualizar-EC")[0].reset();
+    $("#badgeInfo").text("Lista");
+
+    $("#crearTema").show();
+    llenar_lista_CT();
+    var idTema=$("#inicioIdTema").val()
+    aplicarTema(idTema,'otro');      
 }
 
 function verAsistencias(){

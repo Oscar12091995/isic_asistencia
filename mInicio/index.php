@@ -14,6 +14,10 @@ $fecha=date("Y-m-d");
      <link rel="stylesheet" href="../plugins/bootstrap-4.0.0/dist/css/bootstrap.min.css">
      <!-- Estilos propios -->
      <link rel="stylesheet" href="../css/estilos.css">
+     <!-- minicolor -->
+     
+     <link rel="stylesheet" href="../plugins/jquery-minicolors/jquery.minicolors.css">
+     <link rel="stylesheet" href="../plugins/jquery-minicolors/jquery.minicolors.css">
      <!-- Alertifyjs -->
      <link rel="stylesheet" href="../plugins/alertifyjs/css/alertify.min.css">
      <link rel="stylesheet" href="../plugins/alertifyjs/css/themes/default.min.css">
@@ -35,6 +39,7 @@ $fecha=date("Y-m-d");
      <link href="../plugins/bootstrap-fileinput-master/themes/explorer-fas/theme.css" media="all" rel="stylesheet" type="text/css"/>
      <!-- sweet alert -->
      <link href="../plugins/bootstrap-sweetalert-master/dist/sweetalert.css" media="all" rel="stylesheet" type="text/css"/>
+     
 </head>
 
 <body class="animated  fadeIn">
@@ -108,7 +113,9 @@ $fecha=date("Y-m-d");
                 </section>
                 
                 <section id="Listado-DP" class="animated  fadeIn contenedor" style="display:none;"></section>
-            </div>        
+            </div> 
+            
+                  
 
             <div class="container" id="estadoCivil">
                 <section id="guardar-EC" style="display:none;">
@@ -125,6 +132,22 @@ $fecha=date("Y-m-d");
                 
                 <section id="Listado-EC" class="animated  fadeIn contenedor" style="display:none;"></section>
             </div>
+            <div class="container" id="crearTema">
+                <section id="guardar-CT" style="display:none;">
+                    <?php
+                        include'../mTemas/formGuardarTema.php';
+                    ?>
+                </section>
+
+                <section id="editar-CT" style="display:none;">
+                    <?php
+                        include'../mTemas/editartema.php';
+                    ?>
+                </section>
+
+                <section id="Listado-CT" class="animated  fadeIn contenedor" style="display:none;"></section>
+            </div>      
+          
 
             <!-- <div class="container" id="usuarios">
                 <section id="guardar-EC" style="display:none;">
@@ -166,6 +189,10 @@ $fecha=date("Y-m-d");
      <!-- Modal Horario DP -->
     <?php include'../mDatosPersonales/modalHorario.php'; ?>
     <!-- Modal Horario DP -->
+    <!-- Modal Temas -->
+   <?php include'../modales/modalArchivo.php'; ?>
+   <!-- funciones temas -->
+   <script src="../mTemas/funcionesCT.js"></script> <!-- Estado Civil -->
 
     <!-- jQuery -->
     <script src="../plugins/jQuery/jquery-3.3.1.js"></script>   
@@ -187,6 +214,8 @@ $fecha=date("Y-m-d");
     <!-- DataTables -->
     <script src="../plugins/dataTablesB4/js/jquery.dataTables.min.js"></script>
     <script src="../plugins/dataTablesB4/js/dataTables.bootstrap4.min.js"></script>
+    
+    <script src="../plugins/jquery-minicolors/jquery.minicolors.js"></script>
     <!-- dataTableButtons -->
     <script type="text/javascript" src="../plugins/dataTableButtons/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="../plugins/dataTableButtons/buttons.flash.min.js"></script>

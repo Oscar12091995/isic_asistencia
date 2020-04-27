@@ -807,12 +807,13 @@ $("#hTurno").change(function () {
                 $("#hTotales").text("Horas Totales: 30");
                 $("#hTotales").css('color', '#00b30f');
                 $("#btnGuardarHorarioDP").removeAttr('disabled');
+                timeCalculator();
 
             } else {
                 if (valorSelect == 'Especial') {
                     $("#l_entrada, #l_salida, #m_entrada, #m_salida, #mi_entrada, #mi_salida, #j_entrada, #j_salida, #v_entrada, #v_salida, #s_entrada, #s_salida, #d_entrada, #d_salida").removeAttr('disabled');
-                    $("#l_entrada, #m_entrada, #mi_entrada, #j_entrada, #v_entrada, #s_entrada, #d_entrada, #l_salida, #m_salida, #mi_salida, #j_salida, #v_salida, #s_salida, #d_salida").val('');
-                    $("#hTotales").text('');
+                    $("#l_entrada, #m_entrada, #mi_entrada, #j_entrada, #v_entrada, #s_entrada, #d_entrada").val(); ("#l_salida, #m_salida, #mi_salida, #j_salida, #v_salida, #s_salida, #d_salida").val();
+                    $("#hTotales").text("Horas Totales: 0");
                     timeCalculator();
                 }
             }
@@ -821,9 +822,9 @@ $("#hTurno").change(function () {
     
 });
 
-$("#btnXD").click(function () {
+// $("#btnXD").click(function () {
 
-});
+// });
 
 function timeCalculator() {
     var lunes_e = $("#l_entrada").val();
