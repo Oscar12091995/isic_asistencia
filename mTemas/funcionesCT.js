@@ -405,10 +405,10 @@ function ProbarTema(colorL,colorB,colorBF,colorBd) {
     }
 }
 $('#btnProbar-CTG').click(function(){
-    var colorL =  $('#colorL').val();
-    var colorB =  $('#colorB').val();
-    var colorBF = $('#colorBF').val();
-    var colorBd = $('#colorBd').val();
+    var colorL =  $("colorL").val();
+    var colorB =  $("colorB").val();
+    var colorBF = $("colorBF").val();
+    var colorBd = $("colorBd").val();
     var idTema=$("#inicioIdTema").val();
     cssTema(colorBF, colorB, colorL, colorBd);
     setTimeout(function(){aplicarTema(idTema,'login')},5000);
@@ -422,5 +422,6 @@ $('#btnProbar-CTE').click(function(){
     cssTema(colorBF, colorB, colorL, colorBd);
     setTimeout(function(){aplicarTema(idTema,'login')},5000);
 });
+
 
 

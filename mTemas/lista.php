@@ -1,10 +1,12 @@
 <?php
 
+
 include'../conexion/conexionli.php';
 include'../funciones/diasTranscurridos.php';
 
 
 //Variable de Nombre
+//$usuario = $_GET['inicioIdUsuario'];
 $varGral="-CT";
 
 $fecha=date("Y-m-d"); 
@@ -75,22 +77,22 @@ $consultarMenu = mysqli_query($conexionLi, $cadenaMenu);
                     <?php echo $n?>
                 </th>
                 <td>
-                    <button <?php echo $dtnDesabilita?> type="button" class="editar btn btn-outline-warning btn-sm activo" id="btnEditar<?php echo $varGral?><?php echo $n?>" onclick="llenar_formulario_CT('<?php echo $id?>','<?php echo $nombre?>','<?php echo $colorl?>','<?php echo $colorb?>','<?php echo $colorbf?>','<?php echo $colorbd?>')">
+                <button <?php echo $dtnDesabilita?> type="button" class="editar btn btn-outline-success btn-sm activo" id="btnEditar<?php echo $varGral?><?php echo $n?>" onclick="llenar_formulario_T('<?php echo $id?>','<?php echo $nombre_tema?>','<?php echo $color_letra?>','<?php echo $color_base?>','<?php echo $color_base_fuerte?>','<?php echo $color_borde?>')">
                                 <i class="far fa-edit fa-lg"></i>
                     </button>
                 </td>
                 <td>
-                    <button <?php echo $dtnDesabilita?> type="button" class="exportar btn btn-outline-dark btn-sm activo" id="btnExportar<?php echo $varGral?><?php echo $n?>" onclick="exportarTemas('<?php echo $id?>')">
-                                <i class=" 	fas fa-download"></i>
+                <button <?php echo $dtnDesabilita?> type="button" class="exportar btn btn-outline-danger btn-sm activo" id="btnImprimir<?php echo $varGral?><?php echo $n?>" onclick="exportar_T('<?php echo $id?>')">
+                                <i class="fas fa-download fa-lg"></i>
                     </button>
                 </td>
                 <td>
-                    <button <?php echo $dtnDesabilita?> type="button" class="aplicar btn btn-outline-danger btn-sm activo" id="btnAplicar<?php echo $varGral?><?php echo $n?>" onmousedown="audio.play()" onclick="aplicarTema(<?php echo $id ?>,'enlace')">
-                             <i class="fas fa-play-circle"></i>
+                <button <?php echo $dtnDesabilita?> type="button" class="aplicar sfx btn btn-outline-info btn-sm activo" id="btnAplicar<?php echo $varGral?><?php echo $n?>" onclick="aplicarTema('<?php echo $id?>', 'tabla')" onmouseover="mousetema(<?php echo $id ?>,'enlace')"  onmouseout="regresar()" onmousedown="audio.play()" onclick="aplicarTema(<?php echo $id ?>,'enlace')">
+                    <i class="fas fa-play-circle"></i>
                     </button>
                 </td>
                 <td>
-                    <label class="textoBase">
+                    <label class="textoBase" onmouseover="regresar()">
                         <?php echo $nombre ?>
                     </label>
                 </td>
@@ -106,7 +108,7 @@ $consultarMenu = mysqli_query($conexionLi, $cadenaMenu);
                 </td>
 
                 <td>
-                    <input value="<?php echo $chkValor?>" onchange="cambiar_estatus_CT(<?php echo $id?>,<?php echo $n?>)" class="toggle-two" type="checkbox" <?php echo $chkChecado?> data-toggle="toggle" data-onstyle="outline-success" data-width="60" data-size="sm" data-offstyle="outline-danger" data-on="<i class='fa fa-check'></i> Si" data-off="<i class='fa fa-times'></i> No" id="check<?php echo $n?>">
+                <input value="<?php echo $chkValor?>" onchange="cambiar_estatus_T(<?php echo $id?>,<?php echo $n?>)" class="toggle-two" type="checkbox" <?php echo $chkChecado?> data-toggle="toggle" data-onstyle="outline-success" data-width="60" data-size="sm" data-offstyle="outline-danger" data-on="<i class='fa fa-check'></i> Si" data-off="<i class='fa fa-times'></i> No" id="check<?php echo $n?>">
                 </td>
             </tr>
         <?php

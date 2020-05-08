@@ -602,4 +602,64 @@ function validarcontraseña(){
     
 }
 
+function mousetema(id,validador){
+    $.ajax({
+        url:"datosTema.php",
+        type:"POST",
+        dateType:"json",
+        data:{id},
+        success:function(respuesta){
 
+            var dataArray = JSON.parse(respuesta);
+
+            var h_sidebar=dataArray.result.color_base_fuerte;
+            var color_base=dataArray.result.color_base;
+            var letra_color=dataArray.result.color_letra;
+            var color_borde=dataArray.result.color_borde;
+            
+            cssTema(h_sidebar,color_base,letra_color,color_borde);
+
+            // if (validador!='login'){
+            //     relacionarTema(id);
+            //     var tema=dataArray.result.nombre_tema;
+            //     $("#inicioIdTema").val(dataArray.result.id_tema);
+                //alertify.success(actividad,2);
+
+                if(validador=='enlace'){
+                  
+                    
+                    
+
+                    // $('#mnuColapsado').click();
+
+                    log(actividad);
+                    $("html, body"); 
+                    return false; 
+                }
+            //}
+
+        },
+        error:function(xhr,status){
+            alert("Error en metodo AJAX"); 
+        },
+    });
+}
+
+function regresar(){
+    var idTema=$("#inicioIdTema").val()
+    aplicarTema(idTema,'otro'); 
+}
+
+function aparecer(){
+    $("#btnEditar").css(":visible");
+}
+// $(document).ready(function () {
+//     $("#Mostrar_Tabla").click(function () {
+//         if ($("#Tabla_Mostrar").is(":visible")) {
+//             document.getElementById("Tabla_Mostrar").style.display = 'none';
+//         }
+//         else {
+//             document.getElementById("Tabla_Mostrar").style.display = '';
+//         }
+//     });
+// });

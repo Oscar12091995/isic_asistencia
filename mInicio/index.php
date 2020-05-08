@@ -16,7 +16,7 @@ $fecha=date("Y-m-d");
      <link rel="stylesheet" href="../css/estilos.css">
      <!-- minicolor -->
      
-     <link rel="stylesheet" href="../plugins/jquery-minicolors/jquery.minicolors.css">
+     
      <link rel="stylesheet" href="../plugins/jquery-minicolors/jquery.minicolors.css">
      <!-- Alertifyjs -->
      <link rel="stylesheet" href="../plugins/alertifyjs/css/alertify.min.css">
@@ -83,6 +83,7 @@ $fecha=date("Y-m-d");
                     <input type="hidden" id="inicioIdusuario">
                     <input type="hidden" id="inicioIdDato">
                     <input type="hidden" id="inicioIdTema">
+                    
                     <div class="col text-right">
                         <span  class="badge badge-secondary">
                         <label class="lead" id="titular">Programa de ejemplo</label>
