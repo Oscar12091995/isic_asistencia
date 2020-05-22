@@ -148,13 +148,25 @@ $fecha=date("Y-m-d");
 
                 <section id="Listado-CT" class="animated  fadeIn contenedor" style="display:none;"></section>
             </div>      
-          
+            <div class="container" id="usuarios">
+                <section id="guardar-Us" style="display:none;">
+                    <?php
+                        include'../mUsuarios/fromGuardar.php';
+                    ?>
+                </section>
+
+                <section id="editar-Us" style="display:none;">
+                    <?php
+                        include'../mUsuarios/editarUsuario.php';
+                    ?>
+                </section>
+
+                <section id="Listado-Us" class="animated fadeIn contenedor" style="display:none;"></section>
+            </div> 
 
             <!-- <div class="container" id="usuarios">
                 <section id="guardar-EC" style="display:none;">
-                    <?php
-                        include'../musuarios/formGuardar.php';
-                    ?>
+                 
                 </section>
 
                 <section id="editar-EC" style="display:none;">
@@ -169,6 +181,7 @@ $fecha=date("Y-m-d");
         </div>
 
     </div>
+        
 
     <!-- Modal de cambiopass -->
         <?php include'../modales/modalCambio.php'; ?>
@@ -192,6 +205,10 @@ $fecha=date("Y-m-d");
     <!-- Modal Horario DP -->
     <!-- Modal Temas -->
    <?php include'../modales/modalArchivo.php'; ?>
+   
+    <!-- Modal de Permisos -->
+        <?php include'../modales/modalPermisos.php'; ?>
+    <!-- Modal de Permisos -->
    <!-- funciones temas -->
    <script src="../mTemas/funcionesCT.js"></script> <!-- Estado Civil -->
 
@@ -212,6 +229,8 @@ $fecha=date("Y-m-d");
     <script src="../mLogin/funcionesL.js"></script><!-- Login -->
     <script src="../mDatosPersonales/funcionesDP.js"></script> <!-- Datos Personales --> 
     <script src="../mEstadoCivil/funcionesEC.js"></script> <!-- Estado Civil -->
+    <script src="../mTemas/funcionesCT.js"></script> <!-- Temas -->
+    <script src="../mUsuarios/funcionesUs.js"></script> <!-- Usuarios -->
     <!-- DataTables -->
     <script src="../plugins/dataTablesB4/js/jquery.dataTables.min.js"></script>
     <script src="../plugins/dataTablesB4/js/dataTables.bootstrap4.min.js"></script>
@@ -251,6 +270,9 @@ $fecha=date("Y-m-d");
     <script>
         combo_ecivil();
         selectTwo();
+        combo_personasG();
+        combo_personas();
+        combo_temas();
     </script>
 
     <script>

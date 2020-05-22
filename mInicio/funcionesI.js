@@ -17,11 +17,30 @@ function ocultarSecciones(){
     $("#editar-EC").hide();
     $("#Listado-EC").hide();
     //USUARIOS
+    $("#usuarios").hide();
+    $("#guardar-Us").hide();
+    $("#editar-Us").hide();
+    $("#Listado-Us").hide();
+    //
     $("#crearTema").hide();
     $("#guardar-CT").hide();
     $("#editar-CT").hide();
     $("#Listado-CT").hide();
     //Temas
+}
+
+function verUsuarios(){
+    ocultarSecciones();
+
+    $("#lblTitular").text("Usuarios");
+    $("#badgeInfo").text("Lista");
+    $("#editar-Us").hide();
+    $("#guardar-Us").hide();
+    $("#Listado-Us").fadeIn();
+    $("#usuarios").show();
+    llenar_lista_Us();
+    var idTema=$("#inicioIdTema").val()
+    aplicarTema(idTema,'otro');  
 }
 function mostrarTemas(){
     ocultarSecciones();
@@ -116,9 +135,9 @@ function cambiarPassSis(){
 
 
 
-function verUsuarios(){
-    ocultarSecciones();
-}
+// function verUsuarios(){
+//     ocultarSecciones();
+// }
 
 
 
