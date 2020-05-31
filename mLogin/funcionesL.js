@@ -175,35 +175,37 @@ function validarcontra(){
     var pass = $("#pass").val();
     var vpass = $("#vpass").val();
 
-    if (pass.length>=8 || vpass.length >= 8) {
-        $("#Lon").removeClass("rojo");
-        $("#Lon").addClass("verde");
+    if (pass.length != 8 || vpass.length !=8 ) {
+        $("#Sim").addClass("rojo");
+        $("#Sim").removeClass("verde");
+        $("#aceptado").removeClass("valid");
+        $("#aceptado").addClass("invalid");
+    }
+    else{
+        $("#btnGuardarPass").attr("disabled","disabled");
+        $("#Sim").addClass("verde");
+        $("#Sim").removeClass("rojo");
+        
         $("#aceptado").addClass("valid");
-        $("#aceptado").removeClass("invalid");
+       $("#aceptado").removeClass("invalid");
+    }
 
-        if ((pass == vpass)) {
+        if (vpass == pass) {
             $("#btnGuardarPass").removeAttr("disabled");
-            $("#Sim").removeClass("rojo");
-            $("#Sim").addClass("verde");
+            $("#Lon").removeClass("rojo");
+            $("#Lon").addClass("verde");
             $("#rechazado").addClass("valid");
             $("#rechazado").removeClass("invalid");
         }
         else{
             $("#btnGuardarPass").attr("disabled","disabled");
-            $("#Sim").removeClass("verde");
-            $("#Sim").addClass("rojo");
+            $("#Lon").removeClass("verde");
+            $("#Lon").addClass("rojo");
             $("#rechazado").removeClass("valid");
             $("#rechazado").addClass("invalid");
         }
-    }
-    else{
-        $("#btnGuardarPass").attr("disabled","disabled");
-        $("#Lon").removeClass("verde");
-        $("#Lon").addClass("rojo");
-        
-        $("#aceptado").removeClass("valid");
-        $("#aceptado").addClass("invalid");
-    }
+    
+    
     
 }
 function cambiarPass(){

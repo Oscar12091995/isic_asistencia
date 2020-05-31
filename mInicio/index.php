@@ -39,6 +39,7 @@ $fecha=date("Y-m-d");
      <link href="../plugins/bootstrap-fileinput-master/themes/explorer-fas/theme.css" media="all" rel="stylesheet" type="text/css"/>
      <!-- sweet alert -->
      <link href="../plugins/bootstrap-sweetalert-master/dist/sweetalert.css" media="all" rel="stylesheet" type="text/css"/>
+     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
      
 </head>
 
@@ -211,7 +212,7 @@ $fecha=date("Y-m-d");
     <!-- Modal de Permisos -->
    <!-- funciones temas -->
    <script src="../mTemas/funcionesCT.js"></script> <!-- Estado Civil -->
-
+   
     <!-- jQuery -->
     <script src="../plugins/jQuery/jquery-3.3.1.js"></script>   
     
@@ -231,6 +232,8 @@ $fecha=date("Y-m-d");
     <script src="../mEstadoCivil/funcionesEC.js"></script> <!-- Estado Civil -->
     <script src="../mTemas/funcionesCT.js"></script> <!-- Temas -->
     <script src="../mUsuarios/funcionesUs.js"></script> <!-- Usuarios -->
+    <script src="../mTemas/funcionesCT.js"></script> <!-- Temas -->
+    <script src="../mAsistencias/funcionesAs.js"></script> <!-- Asistencias -->
     <!-- DataTables -->
     <script src="../plugins/dataTablesB4/js/jquery.dataTables.min.js"></script>
     <script src="../plugins/dataTablesB4/js/dataTables.bootstrap4.min.js"></script>

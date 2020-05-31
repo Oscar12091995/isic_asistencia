@@ -68,6 +68,14 @@ function verAsistencias(){
     $("#badgeInfo").text("Dezliza tú tarjeta");
     var idTema=$("#inicioIdTema").val()
     aplicarTema(idTema,'otro');
+    setTimeout(function(){
+        $('#ClaveReg').focus();
+        $('#ClaveReg').empty();
+    },1000);
+
+    $("#soundActiv").bootstrapToggle('on');
+    alertify.success('Bienvenido al registro de asistencias',2);
+    hablarAsis('Bienvenido');
 }
 
 function verDatosPersonales(){
@@ -84,7 +92,12 @@ function verDatosPersonales(){
     $("#datosPersona").show();
     llenar_lista_DP();
     var idTema=$("#inicioIdTema").val()
-    aplicarTema(idTema,'otro');      
+    aplicarTema(idTema,'otro');     
+    $('.reloj, .fecha ').css({
+        color: letra_color,
+        "background-color": h_sidebar,
+        border: '4px solid'+ color_borde,
+    }); 
 }
 
 function verEstadoCivil(){
@@ -570,7 +583,7 @@ function LimpiarModalCambioPass(){
     $("#Sims").addClass("rojo");
     $("#Lons").removeClass("verde");
     $("#Lons").addClass("rojo");
-    $("#btnGuardarPass").attr("disabled","disabled");
+    $("#btnGuardarPassword").attr("disabled","disabled");
     $('#password').attr('type', 'password');
     $('#vpassword').attr('type', 'password');
 }
@@ -589,37 +602,37 @@ function validarcontraseña(){
     var pass = $("#password").val();
     var vpass = $("#vpassword").val();
 
-    if (pass.length>=8 || vpass.length >= 8) {
-        $("#Lons").removeClass("rojo");
-        $("#Lons").addClass("verde");
+    if (pass.length != 8 || vpass.length !=8) {
+        $("#Sims").addClass("rojo");
+        $("#Sims").removeClass("verde");
+        $("#aceptados").removeClass("valid");
+        $("#aceptados").addClass("invalid");
+    }
+    else{
+        $("#btnGuardarPassword").attr("disabled","disabled");
+        $("#Sims").addClass("verde");
+        $("#Sims").removeClass("rojo");
+        
         $("#aceptados").addClass("valid");
-        $("#aceptados").removeClass("invalid");
+       $("#aceptados").removeClass("invalid");
+    }
 
-        if ((pass == vpass)) {
+        if (vpass == pass) {
             $("#btnGuardarPassword").removeAttr("disabled");
-            $("#Sims").removeClass("rojo");
-            $("#Sims").addClass("verde");
+            $("#Lons").removeClass("rojo");
+            $("#Lons").addClass("verde");
             $("#rechazados").addClass("valid");
             $("#rechazados").removeClass("invalid");
         }
         else{
             $("#btnGuardarPassword").attr("disabled","disabled");
-            $("#Sims").removeClass("verde");
-            $("#Sims").addClass("rojo");
+            $("#Lons").removeClass("verde");
+            $("#Lons").addClass("rojo");
             $("#rechazados").removeClass("valid");
             $("#rechazados").addClass("invalid");
-        }
-    }
-    else{
-        $("#btnGuardarPassword").attr("disabled","disabled");
-        $("#Lons").removeClass("verde");
-        $("#Lons").addClass("rojo");
-        
-        $("#aceptados").removeClass("valid");
-        $("#aceptados").addClass("invalid");
-    }
-    
+        }   
 }
+
 
 function mousetema(id,validador){
     $.ajax({
