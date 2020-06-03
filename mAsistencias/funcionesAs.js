@@ -63,9 +63,9 @@ function pulsar(e) {
             if (clave == '') {
                 var res = MenuOption('ingresar');
                 $('.alertasH').html(res);
-                alertify.error('Debes de colocar una clave.',2);
+                alertify.error('la Clave no existe',2);
                 Limpiar();
-                hablarAsis('Debes de colocar una clave.');
+                hablarAsis('La Clave no existe');
 
             }
             else{
@@ -88,6 +88,7 @@ function pulsar(e) {
                                     alertify.error('Ya has registrado la entrada.',2);
                         }else if (responseA = 'Si') {
                             UsuarioCompro(clave);
+                            hablarAsis('Gracias');
                         }
                     }
                 });
@@ -153,12 +154,12 @@ function asistenciaCheck(clave) {
 
             }else{
                 
-                var res = '<div class="alert alert-danger" style="font-size: 30px;" role="alert"> No cuentas con un horario aun. </div>';
+                var res = '<div class="alert alert-danger" style="font-size: 30px;" role="alert"> No cuentas con un horario asignado. </div>';
                 $('.alertasH').html(res);
                 Limpiar();
 
-                alertify.error('No cuentas con un horario aun.',2);
-                hablarAsis('No cuentas con un horario aun.');
+                alertify.error('No cuentas con un horario de trabajo asignado.',2);
+                hablarAsis('No cuentas con un horario de trabajo asignado recurre a tu supervisor.');
             }
         },
         error:function(xhr,status){
@@ -318,7 +319,7 @@ function MenuOption(option){
             op = '<div style="font-size: 30px;" class="alert alert-danger" role="alert"> Tu asistencia se encuentra fuera del rango de tu horario. </div>';
             break;
         case 'puntual':
-            op = '<div style="font-size: 30px;" class="alert alert-success" role="alert"> Gracias por registrar su entrada. </div>';
+            op = '<div style="font-size: 30px;" class="alert alert-success" role="alert"> Gracias. </div>';
             break;
         case 'retardoMenor':
             op = '<div style="font-size: 30px;" class="alert alert-warning" role="alert"> Retraso Menor. </div>';
@@ -330,7 +331,7 @@ function MenuOption(option){
             op = '<div style="font-size: 30px;" class="alert alert-danger" role="alert"> Error. </div>';
             break;
         case 'salida':
-            op = '<div style="font-size: 30px;" class="alert alert-info" role="alert"> Gracias por registrar su salida. </div>';
+            op = '<div style="font-size: 30px;" class="alert alert-info" role="alert"> Gracias. </div>';
             break;
         case 'activo':
             op = '<div style="font-size: 30px;" class="alert alert-danger" role="alert"> Este usuario no esta activo, no puede registrar asistencia. </div>';
@@ -367,6 +368,7 @@ function horarioDias(HraE, HraS){
         $('.alertasH').html(mensaje); 
         Limpiar();
         alertify.error('Segun tu horario, no es un dia laboral para ti.',2);
+        hablarAsis('No es tú día laboral');
     } else {
                 HraEntraLess10 = SacarMini(HraE, 10, 'menos');
                 HraEntraPlus5 = SacarMini(HraE, 5, 'mas');
@@ -387,8 +389,8 @@ function horarioDias(HraE, HraS){
                     $('.alertasH').html(mensaje); 
                     RegistrarAsistenci(clave, horitaa, 'Asistencia Puntual');
                     datos(clave);
-                    alertify.success('Gracias por registrar su entrada.',2);
-                    hablarAsis('Gracias por registrar su entrada.');            
+                    alertify.success('Gracias.',2);
+                    hablarAsis('Gracias.');            
                 } else if ((new Date(hraCp).getTime() > new Date(HraEntraPlus5).getTime())  && (new Date(hraCp).getTime() <= new Date(HraEntraPlus15).getTime())) {
                 //retardoMenor
                     var mensaje = MenuOption('retardoMenor');

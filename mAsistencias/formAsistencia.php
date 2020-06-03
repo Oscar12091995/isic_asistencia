@@ -15,11 +15,7 @@ $varGral="-AS";
                 <input type="number" class="form-control" onkeypress="pulsar(event)" id="ClaveReg" style="height: 81px;font-size: 35px;" placeholder ="Clave de Personal" autofocus='autofocus' required>
             </div>
         </div>
-        <div class=" col text-right">
-            <input type="checkbox" id="soundActiv" data-toggle="toggle" data-size="sm" data-onstyle="outline-success" data-offstyle="outline-danger" data-on="<i class='fa fa-check'></i> Si" data-off="<i class='fa fa-times'></i> No">
-            &nbsp; Activar Sonido
-            </button>
-        </div>
+       
     </div>
     <div class="row">
         <div class=" col-lg-12 text-center">
@@ -45,6 +41,11 @@ $varGral="-AS";
             </div>
         </div>
     </div>
+    <div class=" col text-right">
+            <input type="checkbox" id="soundActiv" data-toggle="toggle" data-size="sm" data-onstyle="outline-success" data-offstyle="outline-danger" data-on="<i class='fa fa-check'></i> Si" data-off="<i class='fa fa-times'></i> No">
+            &nbsp; Activar Sonido
+            </button>
+        </div>
     <div class="row">
         <div class="col-lg-12 infoUsuario">
            <br>

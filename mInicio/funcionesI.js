@@ -74,7 +74,7 @@ function verAsistencias(){
     },1000);
 
     $("#soundActiv").bootstrapToggle('on');
-    alertify.success('Bienvenido al registro de asistencias',2);
+    alertify.success('Bienvenido',2);
     hablarAsis('Bienvenido');
 }
 
